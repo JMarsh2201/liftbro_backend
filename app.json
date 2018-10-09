@@ -19,12 +19,3 @@
     }
   ]
 }
-
-
-{ group : "Shoulders", "exercise"s : [ { "exercise" : "Arnold Press" }, { "exercise" : "Upright Row" }, { "exercise" : "Seated Overhead Barbell Press" }, { "exercise" : "Seated Overhead Dumbbell Press" }, { "exercise" : "Dumbbell Incline Row" }, { "exercise" : "Standing Military Press" }, { "exercise" : "Barbell Push Press" } ] }
-{ group : "Abs", "exercise"s : [ { "exercise" : "Full-Body Crunch" }, { "exercise" : "Plank" }, { "exercise" : "Ab-Wheel Roll-Out" }, { "exercise" : "Decline Russian Twist" }, { "exercise" : "Kneeling Cable Crunch" }, { "exercise" : "Machine Crunch" }, { "exercise" : "Hanging Leg Raise" } ] }
-{ group : "Legs", "exercise"s : [ { "exercise" : "Hack Squat" }, { "exercise" : "Romanian Deadlift" }, { "exercise" : "Leg Press" }, { "exercise" : "Dumbbell Lunge" }, { "exercise" : "Bulgarian Split Squat" }, { "exercise" : "Front Squat" }, { "exercise" : "Squat" } ] }
-{ group : "Chest", "exercise"s : [ { "exercise" : "Chest Dips" }, { "exercise" : "Incline Dumbbell Press" }, { "exercise" : "Seated Machine Press" }, { "exercise" : "Machine Decline Press" }, { "exercise" : "Low-Incline Barbell Bench Press" }, { "exercise" : "Flat Bench Dumbbell Press" }, { "exercise" : "Barbell Bench Press" } ] }
-{ group : "Triceps", "exercise"s : [ { "exercise" : "One-Arm Overhead Extension" }, { "exercise" : "Underhand Kickback" }, { "exercise" : "Tate Press" }, { "exercise" : "Pullover" }, { "exercise" : "Lying Triceps Extension" }, { "exercise" : "Decline Triceps Extension" }, { "exercise" : "Close-Grip Bench Press" } ] }
-{ group : "Biceps", "exercise"s : [ { "exercise" : "Incline Dumbbell Hammer Curl" }, { "exercise" : "Incline Inner-Biceps Curl" }, { "exercise" : "Standing Concentration Dumbbell Curl" }, { "exercise" : "EZ-Bar Curl" }, { "exercise" : "Zottman Curl" }, { "exercise" : "Preacher Curl" }, { "exercise" : "Overhead Cable Curl" } ] }
-{ group : "Back", "exercise"s : [ { "exercise" : "Decline Bench Dumbbell Pull-Over" }, { "exercise" : "Deadlift" }, { "exercise" : "Pull-Ups" }, { "exercise" : "T-Bar Row" }, { "exercise" : "Bent-Over Barbell Deadlift" }, { "exercise" : "Single-Arm Dumbbell Row" }, { "exercise" : "Decline Bench Dumbbell Pull-Over" } ] }
