@@ -2,16 +2,16 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var GroupSchema = new Schema({
-  group: String,
-  exercises: [{type: Schema.Types.ObjectId, ref:'Exercise'}]
+  muscle: String,
+  exercises: [{type: Schema.Types.ObjectId, ref:'exercise'}]
 });
 
 var ExerciseSchema = new Schema({
   exercise: String,
-  group: {type: Schema.Types.ObjectId, ref:'Group'}
+  group: {type: Schema.Types.ObjectId, ref:'group'}
 });
 
  module.exports = {
-   group: mongoose.model('Group', GroupSchema),
-   exercise: mongoose.model('Exercise', ExerciseSchema)
+   group: mongoose.model('group', GroupSchema),
+   exercise: mongoose.model('exercise', ExerciseSchema)
  }

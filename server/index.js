@@ -7,7 +7,7 @@ const numCPUs = require('os').cpus().length;
 const router = express.Router();
 
 const PORT = process.env.PORT || 5000;
-const DB = process.env.MONGODB_URI || 'mongodb://localhost:27017/liftbro_api';
+const DB = process.env.MONGODB_URI || 'mongodb://localhost:27017/liftbroapi';
 const MONGO_OPTS = {useNewUrlParser: true}
 const BP_OPTS = {extended: true}
 
