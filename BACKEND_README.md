@@ -10,7 +10,7 @@ npm run dev
 ##### naming convention for all posts: please capitalize each new non-key word. ex. exercise: "Incline Barbell Press"
 
 - Get muscle groups
- - this should be viewed as a drop down list the user can select from. also populates corresponding exercises.
+ - this should be viewed as a drop down list the user can select from. also populates corresponding exercises (with checkboxes).
 
 
 - Post muscle groups

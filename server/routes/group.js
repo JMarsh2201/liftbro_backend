@@ -4,7 +4,7 @@ const sendResponse = require('../utilities/response')
 const mongoose = require('mongoose')
 
 module.exports = function(router) {
-  // view all muscle groups and corresponding exercises. for use in dropdown menu.
+  // view all muscle groups and corresponding exercises.
   router.route('/groups')
     .get((req, res) => {
       Group.find()
@@ -29,15 +29,17 @@ module.exports = function(router) {
       })
     })
 
-  router.route('/select_exercises/:d')
-  .get((req, res) => {
-    const exArr = req.params.d.split('%').map(x => mongoose.Types.ObjectId(x))
-    Exercise.find({ '_id': { $in: exArr }},
-      (err, exercises) => {
-        if (err) res.send(err)
-        res.json(exercises)
-      });
-    })
+
+  // get checkbox selected exercises.
+  router.route('/select_exercises/:selected')
+    .get((req, res) => {
+      const exArr = req.params.selected.split('%').map(x => mongoose.Types.ObjectId(x))
+      Exercise.find({ '_id': { $in: exArr }},
+        (err, exercises) => {
+          if (err) res.send(err)
+          res.json(exercises)
+        });
+      })
 
   router.route('/groups/:group_id/exercises')
   // get all exercises for specific muscle group.
