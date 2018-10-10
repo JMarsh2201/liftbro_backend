@@ -1,8 +1,10 @@
 const Group = require('../models/exercises').group;
 const Exercise = require('../models/exercises').exercise;
 const sendResponse = require('../utilities/response')
+const mongoose = require('mongoose')
 
 module.exports = function(router) {
+  // view all muscle groups and corresponding exercises. for use in dropdown menu.
   router.route('/groups')
     .get((req, res) => {
       Group.find()
@@ -13,6 +15,7 @@ module.exports = function(router) {
           res.json(groups);
         });
     })
+    // internal use only. users will not post. adds {muscle: <muscle group>}
     .post((req, res) => {
       const group = new Group()
       const { body } = req
@@ -26,18 +29,18 @@ module.exports = function(router) {
       })
     })
 
-  // router.route('/groups/:group_id')
-  //   .get(function(req, res) {
-  //     Group.findById(req.params.group_id, function(err, group) {
-  //       if (err)
-  //         res.send(err);
-  //       res.json(group);
-  //     })
-  //     // not sure about this one vvvv
-  //     .populate('exercises', 'group', 'group')
-  //   })
-  //
+  router.route('/select_exercises/:d')
+  .get((req, res) => {
+    const exArr = req.params.d.split('%').map(x => mongoose.Types.ObjectId(x))
+    Exercise.find({ '_id': { $in: exArr }},
+      (err, exercises) => {
+        if (err) res.send(err)
+        res.json(exercises)
+      });
+    })
+
   router.route('/groups/:group_id/exercises')
+  // get all exercises for specific muscle group.
     .get((req, res) => {
       Group.findById(req.params.group_id, (err, group) => {
           if (err)
@@ -50,6 +53,7 @@ module.exports = function(router) {
           res.json(group.exercises)
         })
     })
+    // internal use only. users will not post. adds {exercise: <exercise name>}
     .post((req, res) => {
       Group.findById(req.params.group_id, (err, group) => {
         if (err) {
@@ -86,7 +90,6 @@ module.exports = function(router) {
             return exercise
 
           }
-
         }
       })
     })
